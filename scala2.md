@@ -35,6 +35,7 @@ val `for` = 123
 ```
 
 ## 各种Literal的定义 ##
+```scala
 0x12
 0.12f
 31.2d
@@ -50,6 +51,7 @@ This is
 Multiple
 Line
 """
+```
 
 ## String interpolation ##
 ```scala
