@@ -260,7 +260,7 @@ loop {
 ```
 
 - 递归函数调用与尾递归
-```
+```scala
 def fab(n: Int): Int = if (n == 0 || n == 1) 1 else fab(n - 1) + fab(n - 2)
 
 import scala.annotation.tailrec

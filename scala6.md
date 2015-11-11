@@ -456,8 +456,8 @@ Map(1 -> "a") == HashMap(1 -> "a") // true
 ```
 
 - 迭代器(iterators)
-定义：
 ```scala
+// definition
 abstract class Iterator[+A] {
   def hasNext: Boolean
   def next: A
@@ -467,8 +467,9 @@ abstract class Iterator[+A] {
 while (it.hasNext) 
   println(it.next())
 ```
-例子：
+
 ```scala
+// examples
 val it = Iterator("a", "b", "c")
 val it1 = Iterator("a", "b", "c")
 val it2 = Iterator(1, 2, 3)
@@ -479,7 +480,6 @@ val it3 = Iterator(4,5,6)
 val (it1, it2) = it3.duplicate // it3 is invalid
 it1.foreach(println)
 it2.foreach(println)
-
 ```
 
 ```scala
@@ -516,6 +516,7 @@ it2.foreach(println)
   }
   
 ```
+
 ```scala
 // def view
 (1 to 1000000000).map(_ + 3).take(3) // takes long time
@@ -533,9 +534,11 @@ Stream.range(1,1000000000).map(_ + 3).takeWhile(_ < 10).force
 ```
 
 - 并行操作
+```scala
 (1 to 10000000).par.count(_ % 2 == 0)
 (1 to 10000000).par.sum
 (1 to 10000000).par.iterator.map(_ + 3).sum
+```
 
 - 元组（Tuple）
 从scala.Tuple1, scala.Tuple2 ... scala.Tuple22派生
@@ -550,7 +553,7 @@ println(stuff._3) // fish
 ```
 
 - Product
-Product是一个trait，Sub trait 有scala.Product1, scala.Product2 ... scala.Product22
+Product是一个trait，Sub trait 有`scala.Product1`, `scala.Product2` ... `scala.Product22`
 ```scala
 trait Product extends Any with Equals {
   def productElement(n: Int): Any

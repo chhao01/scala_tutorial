@@ -148,7 +148,6 @@ while(it.tail != null) {
   println(it.head)
   it = it.tail
 }
-```
 
 ListNode.empty[Int].prepend(123).prepend(234) // ListNode[Int]
 
