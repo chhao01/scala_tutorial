@@ -140,11 +140,11 @@ scala.Predef.* / java.lang.* / scala.* // 默认已经导入
 
 
 - 特殊类型：
-Unit 理解为没有值的类型，也就是函数执行体类型
-Nothing 是所有的类型的子类型
-Null null或者empty引用
-Any 所有类型的基类类型
-AnyRef 所有的可以被引用类型的基类
+  - Unit 理解为没有值的类型，也就是函数执行体类型
+  - Nothing 是所有的类型的子类型
+  - Null null或者empty引用
+  - Any 所有类型的基类类型
+  - AnyRef 所有的可以被引用类型的基类
 
 ## 分支与循环 ##
 - 条件分支(if)
