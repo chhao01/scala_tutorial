@@ -1,3 +1,5 @@
+<em>请勿进行商业转载，学习交流转载请注明出处</em>
+
 # 泛型 #
 - 基本泛型
 ```scala
@@ -224,6 +226,7 @@ class C[-T](var value: T) {
   }
 }
 ```
+
 - 上界（Upper Bound）
 ```java
 public class A {
@@ -379,6 +382,7 @@ func(123, 234)
 def add[A: Numeric](a: A, b: A) = implicitly[Numeric[A]].plus(a, b) // Context Bound
 add(123, 234)
 ```
+
 - 视图边界（View Bound）
 ```scala
 object Formatter {
@@ -426,7 +430,7 @@ def mkArray[T: ClassTag](v: T*): Array[T] = {
 mkArray(1,2,3)
 mkArray("a", "bc", "d")
 ```
-// more concrete example
+
 ```java
 public static class Transform<FROM, TO> {
     public TO[] transform(FROM[] raw) {
@@ -580,10 +584,6 @@ object IntToNumberArrayRegistry extends ConverterRegistry {
 }
 
 IntToNumberArrayRegistry.register("triple", (n: java.lang.Integer) => Array(n, n * 1.0f, n * 1.0d))
-
 IntToNumberArrayRegistry.converter(2)
 IntToNumberArrayRegistry.converter(3)
-
-
-
 ```

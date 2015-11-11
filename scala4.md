@@ -1,3 +1,5 @@
+<em>请勿进行商业转载，学习交流转载请注明出处</em>
+
 # 类与对象 #
 - 类定义
 ```scala
@@ -26,7 +28,7 @@ pt.setColor(456)
 println(pt.getColor()) 
 
 class Name(var value: String)
-==
+// 完全等价于
 class Name(s: String) {
   private var _value: String = s
   def value: String = _value
@@ -46,13 +48,14 @@ import scala.beans.BeanProperty // to follow the java Accessor pattern, getter/s
 class Name(@BeanProperty var value: String)
 
 class Name(val value: String)
-==
+// 完全等价于
 class Name(s: String) {
   private var _value: String = s
   def value: String = _value
 }
 
 ```
+
 - Case Class
 ```scala
 case class Point (x: Int, y: Int, color: Int) 
@@ -100,6 +103,7 @@ class Point(var x: Int, var y: Int, color: Int) extends Colorable(color) with Si
   }
 } 
 ```
+
 - 匿名类
 ```scala
 trait SimpleTrait {
@@ -125,6 +129,7 @@ val a = new SimpleClass with SimpleTrait {
  def add4(x: Int) = x + 4 
 } 
 ```
+
 - 对象与内部类
 ```scala
 object DBManager {
@@ -165,7 +170,8 @@ import Helpers._
 
 5.times(println("HI")) 
 ```
-更为复杂的例子
+
+- 更为复杂的例子
 ```scala
 // example 1
 class RDD(data: String) {
@@ -200,6 +206,7 @@ import myApp._
 import ClusterMode._ // import LocalMode._ 
 "select * from src".run 
 ```
+
 - Operator
 ```scala
 case class N(x: Int) {
@@ -255,6 +262,7 @@ row(0) = null // update
 println(row(0)) // call the apply version 1 
 println(row(0, "aaaa")) // call the apply version 2 
 ```
+
 - Explicity Self-Type引用
 ```scala
 abstract class ConnectionPool {
@@ -300,7 +308,8 @@ dao.authenticate("user1", "pass1")
 val dao2 = new MySQLConnectionPool with UserDao with BusinessDao 
 dao2.authenticate("user1", "pass1") 
 ```
-# 闭包(Clousre) #
+
+- 闭包(Clousre)
 ```java
 public static void main(String[] args) {
   int x = 0; 
@@ -326,8 +335,4 @@ println(addX(100)) // prints 200
 constant=2 
 println(addX(100)) // prints 200
 
-
-class A(val times: Int) {
-  
-}
 ```

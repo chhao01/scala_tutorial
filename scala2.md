@@ -1,5 +1,7 @@
+<em>请勿进行商业转载，学习交流转载请注明出处</em>
+
 # Scala基础语法 #
-- 定义类型和创建对象实例
+## 定义类型和创建对象实例 ##
 ```java
 final String[] a = new String[100];
 final double a = 2 + 1.2d;
@@ -21,7 +23,7 @@ a++ // error 没有++操作符
 ++a // error 没有++操作符
 ```
 
-// ;和变量名转义
+## // ;和变量名转义 ##
 ```java
 System.out.println("Hello World"); // ";"结尾
 int for = 123 // Keyword Error
@@ -32,7 +34,7 @@ val a = "Hello World"; println(a)
 val `for` = 123
 ```
 
-1.各种Literal的定义
+## 各种Literal的定义 ##
 0x12
 0.12f
 31.2d
@@ -48,7 +50,8 @@ This is
 Multiple
 Line
 """
-2.String interpolation
+
+## String interpolation ##
 ```scala
 val a = 123
 val b = (123, 456)
@@ -88,7 +91,7 @@ s"This is first element of b ${b._1}"
   
 ```
 
-3.注释
+## 注释 ##
  和Java是一样的，分多行和单行都支持
 ```scala
 /*
@@ -98,12 +101,8 @@ s"This is first element of b ${b._1}"
 // This is single line comment
 /* Another Single line comment */
 ```
-4.操作符和Java完全一样（+-*/ ..)
-var d = 123
-d++
-++d
 
-- 导入依赖的类
+## 导入依赖的类 ##
 ```scala
 import java.util.Array                     // import
 import java.util._                         // wildcard
@@ -124,29 +123,29 @@ showMe("the money")
 scala.Predef.* / java.lang.* / scala.* // 默认已经导入
                                            
 ```
-- 表达式计算
 
-- 类获取与类型转换
+## 类获取与类型转换 ##
 ```scala
     val a: AnyRef = "abc"
     val b: String = a.asInstanceOf[String] // String b = (String)a;
     val clazz: Class[_] = classOf[String]  // Class<?> clazz = String.class;
     val clazz: Class[_] = b.getClass       // Class<?> clazz = b.getClass();
 ```
-- Scala类型族谱
+
+## Scala类型族谱 ##
 
 ![](https://camo.githubusercontent.com/d394abcbb3142dc30ede7d8ca49fafa5013ab7e5/687474703a2f2f7777772e7363616c612d6c616e672e6f72672f6f6c642f73697465732f64656661756c742f66696c65732f696d616765732f636c6173736869657261726368792e706e67)
 
 
-1.特殊类型：
+- 特殊类型：
 Unit 理解为没有值的类型，也就是函数执行体类型
 Nothing 是所有的类型的子类型
 Null null或者empty引用
 Any 所有类型的基类类型
 AnyRef 所有的可以被引用类型的基类
 
-- 分支与循环
-1. 条件分支(if)
+## 分支与循环 ##
+- 条件分支(if)
 ```scala
 val a = 123
 val b = 456
@@ -160,7 +159,7 @@ else {
    println ("b is greater than a")
 }
 ```
-2. For Loop
+- For Loop
 ```scala
 for (idx <- 0 to 10) println(idx) // 0, 1, 2 ... 10
 for (idx <- 0 until 10) println(idx) // 0, 1, 2 ... 9
@@ -183,7 +182,7 @@ for (idx1 <- a
 }
 // 没有break 或者 continue
 ```
-3. While Loop
+- While Loop
 ```scala
 var idx = 0
 while (idx < 10) {
@@ -210,12 +209,29 @@ while (i < args.length && !foundIt) {
 }
 ```
 
-4. Range
+- Range
 ```scala
 val a = 1 to 10
 val b = 1 until 10
 val c = 1 to 10 by 3
 val d = 10 to 1 by -3
 val e = 1.2f to 3.4f by 0.31f
+```
+
+## 等价性 ##
+
+```scala
+
+// 相当于java中的 .equal(..)
+val a = "String 1"
+val b = "String 2"
+a == b // a.equals(b)
+a != b // !a.equals(b)
+
+// 相当于java中的 ==
+val a = "String 1"
+val b = "String 2"
+a eq b // 相当于 java中的 a == b
+a ne b // 相当于 java中的 a != b
 ```
 

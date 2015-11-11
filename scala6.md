@@ -1,22 +1,24 @@
+<em>请勿进行商业转载，学习交流转载请注明出处</em>
+
 # 集合操作 #
-- 不可变集合与可变集合（Immutable V.S Mutable）
+- 不可变集合与可变集合（Immutable V.S Mutable）包
 ```scala
 import scala.collection.mutable
 import scala.collection // default imported
 import scala.collection.immutable
 ```
+
 - 集合类图
 1. 集合基类接口
-![](https://camo.githubusercontent.com/32e9285bc62a80e8030351de6333d9ef688aa0cd/687474703a2f2f692e737461636b2e696d6775722e636f6d2f62535679412e706e67)
+![](https://raw.githubusercontent.com/chhao01/scala_tutorial/master/collection1.png)
 2. 不可变集合类图
-![](https://camo.githubusercontent.com/3866e60cebe33f8bf06c1cb5aabe970b0529b2a0/687474703a2f2f692e737461636b2e696d6775722e636f6d2f32666a6f412e706e67)
+![](https://raw.githubusercontent.com/chhao01/scala_tutorial/master/collection2.png)
 3. 可变集合类图
-![](https://camo.githubusercontent.com/8f5b6495059f0fe00e2903f1c3e02e213a1ea1d1/687474703a2f2f692e737461636b2e696d6775722e636f6d2f447370746c2e706e67)
-
+![](https://raw.githubusercontent.com/chhao01/scala_tutorial/master/collection3.png)
+4. 各种容器及其操作性能比较
 http://docs.scala-lang.org/overviews/collections/performance-characteristics.html
 
-- 举例
-1. 创建不可变集合
+- 创建不可变集合
 ```scala
 Traversable()             // An empty traversable object
 List()                    // The empty list
@@ -44,7 +46,6 @@ Set("dog", "cat", "bird") intersect Set("tiger", "cat")
 Set("dog", "cat", "bird") -- Set("tiger", "cat")
 Set("dog", "cat", "bird") diff Set("tiger", "cat")
 
-
 val seq = Seq("a", "b", "c")
 val seq = Nil.::("c").::("b").::("a") // Nil a object of List[Nothing]() // Contra-variant & Co-variant
 val seq = "a" :: "b" :: "c" :: Nil 
@@ -61,7 +62,7 @@ val stack2 = stack1.pop // scala.collection.immutable.Stack[Int] = Stack(1, 2, 3
 val stack3 = stack1.pop // scala.collection.immutable.Stack[Int] = Stack(1, 2, 3)
 ```
 
-2. 创建可变集合
+- 可变集合
 ```scala
 val buf = scala.collection.mutable.ListBuffer.empty[Int] // Invariant
 buf += 1
@@ -127,7 +128,7 @@ queue.dequeue // 5
 queue.dequeue // java.util.NoSuchElementException: queue empty
 ```
 
-3. 数组
+- 数组
 ```scala
 val a1 = Array(1, 2, 3)
 val a2 = a1 map (_ * 3) // Array(3, 6, 9)
@@ -151,7 +152,7 @@ def printArray2(first: Int, arrs: Int*) {
 }
 ```
 
-4. 集合操作
+- 集合转换操作
 ```scala
 for (i <- 1 to 5) yield i // 1, 2, 3, 4, 5
 for (i <- 1 until 5) yield i // 1, 2, 3, 4
@@ -341,7 +342,7 @@ val results = mixedList collect {
 }
 ```
 
-5. Option
+- Option
 Option Trait 有两个子类：
 Some[T] & None 
 ```scala
@@ -369,7 +370,7 @@ m2.getOrElseUpdate(2, "Two")
 println(m2(1))
 ```
 
-6. 集合类型转化
+- 集合类型转化
 ```scala
 val a = List(1, 2, 3, 4)
 val b = Array(1, 2, 3, 4)
@@ -405,7 +406,7 @@ a.toStream.map(_ + 3).foreach(println)
 Seq((1, "a"), (2, "b"), (3, "c")).toMap
 ```
   
-7. Java Collection & Scala Collection
+- Java Collection & Scala Collection
 ```scala
 import scala.collection.JavaConversions._ // implicit function
 
@@ -440,7 +441,7 @@ b.takeRight(1)
 val c: java.util.List[String] = b
 ```
 
-8. 等价(Equality)
+- 等价(Equality)
 ```scala
 Array(1, 2, 3) == Array(1, 2, 3) // false
 Array(1, 2, 3) sameElements Array(1, 2, 3) // true
@@ -454,7 +455,7 @@ import collection.mutable.{HashMap, ArrayBuffer}
 Map(1 -> "a") == HashMap(1 -> "a") // true
 ```
 
-9. 迭代器(iterators)
+- 迭代器(iterators)
 定义：
 ```scala
 abstract class Iterator[+A] {
@@ -531,12 +532,12 @@ Stream(1, 2, 3).map(x => {println(s"this is $x"); x}).take(1).foreach(println)
 Stream.range(1,1000000000).map(_ + 3).takeWhile(_ < 10).force
 ```
 
-10. 并行操作
+- 并行操作
 (1 to 10000000).par.count(_ % 2 == 0)
 (1 to 10000000).par.sum
 (1 to 10000000).par.iterator.map(_ + 3).sum
 
-11. 元组（Tuple）
+- 元组（Tuple）
 从scala.Tuple1, scala.Tuple2 ... scala.Tuple22派生
 ```scala
 val stuff = (42, "fish") // stuff: (Int, String) = (42,fish)
@@ -548,7 +549,7 @@ println(stuff._2) // 21.3
 println(stuff._3) // fish
 ```
 
-12. Product
+- Product
 Product是一个trait，Sub trait 有scala.Product1, scala.Product2 ... scala.Product22
 ```scala
 trait Product extends Any with Equals {

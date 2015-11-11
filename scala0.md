@@ -1,17 +1,14 @@
-# 面向读者
-自我介绍
-动机
-面向读者群：有一定编程经验，熟悉java开发。
-区别于其它教程：Example、和Java对比、复杂例程、深入探讨、练习时间。
+<em>请勿进行商业转载，学习交流转载请注明出处</em>
 
 # Scala语言是一门什么样的语言 #
-- A Scalable language
-- Object-Oriented
-- Functional
-- Seamless Java Interop
-- Functions are Objects
-- Future-Proof
-- Fun
+- 静态类型语言
+- 面向对象的语言
+- 函数式语言
+- 与Java无缝集成
+- 有趣的语言
+- Scalable Language
+- 更好的Java语言
+
 
 
 

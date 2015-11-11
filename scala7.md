@@ -1,3 +1,5 @@
+<em>请勿进行商业转载，学习交流转载请注明出处</em>
+
 # 模式匹配(Pattern Matching) #
 - 值匹配
 ```java
@@ -99,6 +101,7 @@ def meth[A : TypeTag](xs: List[A]) = typeOf[A] match {
 meth(List("abc", "123"))
 meth(List(1, 2, 3))
 ```
+
 - 值萃取
 ```scala
 // Case Class 
@@ -216,6 +219,7 @@ map.get("a") match {
 }
 
 ```
+
 - Pattern Guard
 ```scala
 case class User(name: String, age: Int) 
