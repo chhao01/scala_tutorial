@@ -38,6 +38,7 @@ def process(a: Int): Unit = {} // process(2)
 def process(a: Int) {} // process(2) function without return value 
 def start = {2} // val a = start 
 def start() = {2} // val a = start()
+```
 
 - 函数调用
 ```scala
