@@ -1,7 +1,9 @@
 # Scala核心教程
 
 - 视频教程链接
-http://edu.csdn.net/course/detail/1629/
+  - http://edu.csdn.net/course/detail/1629/
+  - http://pan.baidu.com/s/1jIhe2W2
+  - 两个版本完全一样，但是非常欢迎使用付费版本。。。
 
 - 交流QQ群
   - 240348813
